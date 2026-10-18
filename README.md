@@ -20,6 +20,8 @@ Neste laboratório educacional, utilizei o Cisco Packet Tracer para estudar como
 
 ## Configurações por dispositivo
 
+---
+
 ### Servidor AAA/RADIUS
 
 | Parâmetro | Configuração observada |
@@ -32,6 +34,7 @@ Neste laboratório educacional, utilizei o Cisco Packet Tracer para estudar como
 | Contas de usuários | user1 e user2 |
 
 As contas são usadas para autenticar dispositivos na rede wireless. 
+
 ---
 
 ### HQ-Laptop-1
