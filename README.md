@@ -31,8 +31,7 @@ Neste laboratório educacional, utilizei o Cisco Packet Tracer para estudar como
 | IP do cliente | 192.168.99.250 |
 | Contas de usuários | user1 e user2 |
 
-As contas são usadas para autenticar dispositivos na rede wireless. As senhas do exercício foram omitidas da documentação pública.
-
+As contas são usadas para autenticar dispositivos na rede wireless. 
 ---
 
 ### HQ-Laptop-1
@@ -46,8 +45,6 @@ As contas são usadas para autenticar dispositivos na rede wireless. As senhas d
 | Criptografia | AES |
 | Endereçamento | DHCP selecionado |
 | Rede prevista na atividade | 192.168.50.0/24 |
-
-O uso de WPA2 com 802.1X permite autenticar o usuário com credenciais individuais, em vez de depender apenas de uma senha compartilhada para toda a rede.
 
 ---
 
@@ -72,7 +69,7 @@ O uso de WPA2 com 802.1X permite autenticar o usuário com credenciais individua
 | Domínio | mail.cyberhq.com |
 | Contas | HQuser1, HQuser2, BRuser1 e BRuser2 |
 
-O SMTP é usado para enviar mensagens; o POP3 permite recebê-las pelo cliente de email.
+O SMTP é usado para enviar mensagens; o POP3 permite o cliente receber pelo email.
 
 ---
 
@@ -85,7 +82,7 @@ O SMTP é usado para enviar mensagens; o POP3 permite recebê-las pelo cliente d
 | BRuser1 | BRuser1@mail.cyberhq.com | Conforme atividade |
 | BRuser2 | BRuser2@mail.cyberhq.com | Conforme atividade |
 
-A atividade também utiliza os computadores 2-3, HQ-Laptop-1 e Net-Admin para configurar clientes de e-mail. As contas e os dispositivos não foram associados individualmente aqui quando a evidência não permitiu essa confirmação.
+A atividade também utiliza os computadores 2-3, HQ-Laptop-1 e Net-Admin para configurar clientes de e-mail. 
 
 ---
 
@@ -150,17 +147,17 @@ rename aMessage_new.txt aMessage_rename.txt
 | Acesso ao servidor FTP | Conexão e autenticação apresentadas no terminal |
 | Exclusão com `malia` | Negada por falta de permissão |
 | Renomeação com `malia` | Concluída com sucesso |
-| E-mail | Tela de composição de mensagem registrada; entrega não confirmada pela captura |
-| Wireless | Configuração de autenticação e DHCP registrada; conectividade final não comprovada pela captura |
+| E-mail | Tela de composição de mensagem registrada |
+| Wireless | Configuração de autenticação e DHCP registrada |
 
-A captura do terminal também registra um timeout em uma tentativa inicial de FTP. Não há evidência suficiente para atribuir uma causa específica.
+A captura do terminal também registra um timeout em uma tentativa inicial de FTP.
 
 ---
 
 ## Conhecimentos adquiridos
 
-O laboratório ajudou a entender que **autenticação** confirma quem está tentando acessar um recurso, enquanto **autorização** determina o que essa pessoa pode fazer depois de entrar.
+O laboratório ajudou a entender que autenticação confirma quem está tentando acessar um recurso, enquanto autorização determina o que essa pessoa pode fazer depois de entrar.
 
-Na prática, essa diferença é importante para o trabalho com suporte de TI e IAM: uma conta pode estar funcionando corretamente, mas ainda assim não ter permissão para determinada ação. Também pratiquei conceitos de autenticação centralizada, acesso wireless, serviços de e-mail e gerenciamento de permissões em arquivos.<img width="209" height="206" alt="FTP" src="https://github.com/user-attachments/assets/9e37b938-4777-4d50-b798-ee3e2ffba774" />
+Na prática, essa diferença é importante para o trabalho com suporte de TI e IAM: uma conta pode estar funcionando corretamente, mas ainda assim não ter permissão para determinada ação. Também pratiquei conceitos de autenticação centralizada, acesso wireless, serviços de e-mail e gerenciamento de permissões em arquivos.
 
 
