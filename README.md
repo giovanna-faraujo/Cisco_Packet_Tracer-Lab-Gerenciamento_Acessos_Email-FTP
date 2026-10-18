@@ -8,13 +8,6 @@ Neste laboratório educacional, utilizei o Cisco Packet Tracer para estudar como
 
 ---
 
-<img width="209" height="206" alt="FTP" src="https://github.com/user-attachments/assets/a604748c-c315-477a-838f-81a15124c397" />
-
----
-<img width="209" height="191" alt="Email" src="https://github.com/user-attachments/assets/7a3bc93b-d8bd-4b21-a617-369a6e62ff6d" />
-
----
-
 ## Objetivos
 
 - Entender a diferença entre autenticação e autorização.
