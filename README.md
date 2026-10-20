@@ -27,6 +27,18 @@ Esta documentação apresenta as configurações registradas, as atividades prev
 
 ---
 
+## Onde esse conhecimento pode ser aplicado?
+
+### Cenário fictício: acesso a arquivos de uma empresa
+
+**Situação:** uma empresa possui uma pasta de arquivos compartilhados. Os funcionários precisam consultar e atualizar documentos, mas somente alguns devem excluir.
+
+**Aplicação:** a equipe de TI configura contas e permissões diferentes. Assim, um funcionário pode acessar os arquivos e realizar determinadas alterações, sem ter autorização para apagar documentos.
+
+**Relação com o laboratório:** o exemplo representa o controle de permissões estudado no FTP e ajuda a entender por que uma conta pode funcionar normalmente mesmo quando uma ação específica é bloqueada.
+
+---
+
 ## Configurações dos dispositivos
 
 ### Servidor AAA/RADIUS
@@ -207,17 +219,4 @@ Esse aprendizado é útil em **Suporte de TI e IAM**, especialmente ao investiga
 | FTP | Protocolo para transferir arquivos entre dispositivos e um servidor. |
 | Permissão | Regra que define quais ações um usuário pode realizar. |
 
----
-
-## Onde esse conhecimento pode ser aplicado?
-
-### Cenário fictício: acesso a arquivos de uma empresa
-
-**Situação:** uma empresa possui uma pasta de arquivos compartilhados. Os funcionários precisam consultar e atualizar documentos, mas somente alguns devem poder excluí-los.
-
-**Aplicação:** a equipe de TI configura contas e permissões diferentes. Assim, um funcionário pode acessar os arquivos e realizar determinadas alterações, sem ter autorização para apagar documentos.
-
-**Relação com o laboratório:** o exemplo representa o controle de permissões estudado no FTP e ajuda a entender por que uma conta pode funcionar normalmente mesmo quando uma ação específica é bloqueada.
-
-<img width="1536" height="1024" alt="Cenário" src="https://github.com/user-attachments/assets/602d9846-72e4-4529-bd71-a5909dd0062d" />
 
