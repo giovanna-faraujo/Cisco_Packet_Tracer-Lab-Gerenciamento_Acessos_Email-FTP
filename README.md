@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-Neste laboratório educacional da **Cisco Networking Academy (NetAcad)**, utilizei o **Cisco Packet Tracer** para entender como controlar o acesso de usuários a uma rede e a diferentes serviços.
+Neste laboratório da **Cisco Networking Academy (NetAcad)**, utilizei o **Cisco Packet Tracer** para entender como controlar o acesso de usuários a uma rede e a diferentes serviços.
 
 A atividade abordou autenticação wireless com AAA/RADIUS, configuração de contas de email e permissões de arquivos em um servidor FTP. O principal aprendizado foi entender que **ter acesso a um sistema não significa ter permissão para realizar todas as ações**.
 
