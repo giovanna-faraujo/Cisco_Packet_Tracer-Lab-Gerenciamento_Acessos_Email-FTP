@@ -27,6 +27,31 @@ Esta documentação apresenta as configurações registradas, as atividades prev
 
 ---
 
+## Etapas da atividade
+
+1. Ativar o serviço AAA/RADIUS e cadastrar os usuários.
+2. Configurar o acesso wireless nos laptops usando WPA2/802.1X e DHCP.
+3. Ativar SMTP e POP3 e criar as contas de email.
+4. Configurar os clientes de email e preparar mensagens.
+5. Ativar o FTP e definir as permissões de cada usuário.
+6. Utilizar comandos FTP para observar as operações disponíveis e as restrições de acesso.
+
+---
+
+## Fluxograma do processo
+
+```mermaid
+flowchart TD
+    A[Início do laboratório] --> B[Configurar AAA e usuários]
+    B --> C[Configurar acesso wireless]
+    C --> D[Configurar serviços e contas de email]
+    D --> E[Definir usuários e permissões FTP]
+    E --> F[Executar comandos FTP]
+    F --> G[Analisar permissões e resultados]
+```
+
+---
+
 ## Onde esse conhecimento pode ser aplicado?
 
 ### Cenário fictício: acesso a arquivos de uma empresa
@@ -127,31 +152,6 @@ A atividade também menciona os dispositivos PC 2-3, HQ-Laptop-1 e Net-Admin na 
 | malia | Sim | Sim | Não | Sim | Sim |
 
 A conta `malia` pode acessar e trabalhar com arquivos, mas não tem autorização para excluir.
-
----
-
-## Etapas da atividade
-
-1. Ativar o serviço AAA/RADIUS e cadastrar os usuários.
-2. Configurar o acesso wireless nos laptops usando WPA2/802.1X e DHCP.
-3. Ativar SMTP e POP3 e criar as contas de email.
-4. Configurar os clientes de email e preparar mensagens.
-5. Ativar o FTP e definir as permissões de cada usuário.
-6. Utilizar comandos FTP para observar as operações disponíveis e as restrições de acesso.
-
----
-
-## Fluxograma do processo
-
-```mermaid
-flowchart TD
-    A[Início do laboratório] --> B[Configurar AAA e usuários]
-    B --> C[Configurar acesso wireless]
-    C --> D[Configurar serviços e contas de email]
-    D --> E[Definir usuários e permissões FTP]
-    E --> F[Executar comandos FTP]
-    F --> G[Analisar permissões e resultados]
-```
 
 ---
 
