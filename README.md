@@ -6,8 +6,7 @@ Neste laboratório da **Cisco Networking Academy (NetAcad)**, utilizei o **Cisco
 
 A atividade abordou autenticação wireless com AAA/RADIUS, configuração de contas de email e permissões de arquivos em um servidor FTP. O principal aprendizado foi entender que **ter acesso a um sistema não significa ter permissão para realizar todas as ações**.
 
-
-<img width="662" height="353" alt="Topologia" src="https://github.com/user-attachments/assets/caf379c4-ed29-4476-8490-9f08df905945" />
+<img width="1536" height="1024" alt="Infográfico de Controle de Acesso em Redes" src="https://github.com/user-attachments/assets/3c99a1e1-2269-4806-b2c9-1d36494e2079" />
 
 ---
 
