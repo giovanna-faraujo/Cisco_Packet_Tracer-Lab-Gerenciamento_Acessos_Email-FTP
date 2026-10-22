@@ -40,6 +40,8 @@ Responsável por verificar as credenciais dos usuários que tentam acessar a red
 | IP do cliente | `192.168.99.250` |
 | Usuários cadastrados | `user1` e `user2` |
 
+---
+
 ### 2. Rede wireless e laptops
 
 Os laptops utilizam a rede `HQ-INT`, com autenticação de usuários pelo servidor AAA/RADIUS.
@@ -52,6 +54,8 @@ Os laptops utilizam a rede `HQ-INT`, com autenticação de usuários pelo servid
 | Endereçamento | DHCP |
 | Rede prevista | `192.168.50.0/24` |
 
+---
+
 **Usuários dos dispositivos:**
 
 | Dispositivo | Usuário | Situação |
@@ -60,6 +64,8 @@ Os laptops utilizam a rede `HQ-INT`, com autenticação de usuários pelo servid
 | HQ-Laptop-2 | `user2` | Configuração prevista na atividade |
 
 A autenticação permite verificar as credenciais antes de autorizar o acesso à rede. O material registra as configurações, mas não confirma a conectividade final dos laptops.
+
+---
 
 ### 3. Servidor de email
 
@@ -70,6 +76,8 @@ O servidor utiliza SMTP para envio de mensagens e POP3 para recuperação de ema
 | SMTP | Ativado |
 | POP3 | Ativado |
 | Domínio | `mail.cyberhq.com` |
+
+---
 
 **Contas de email:**
 
@@ -82,6 +90,8 @@ O servidor utiliza SMTP para envio de mensagens e POP3 para recuperação de ema
 
 A configuração dos clientes de email envolveu dispositivos como `PC 1-1`, `PC 2-3`, `HQ-Laptop-1` e `Net-Admin`. A conta HQuser1 foi indicada para o PC 1-1.
 
+---
+
 ### 4. Servidor FTP e permissões
 
 O FTP permite transferir arquivos entre computadores e um servidor. Cada usuário recebe permissões que definem quais operações pode realizar.
@@ -91,6 +101,8 @@ O FTP permite transferir arquivos entre computadores e um servidor. Cada usuári
 | Serviço | FTP ativado |
 | Endereço IP | `192.168.75.2` |
 | Usuários | `sukyi`, `ajulo` e `malia` |
+
+---
 
 **Permissões configuradas:**
 
@@ -111,6 +123,8 @@ O FTP permite transferir arquivos entre computadores e um servidor. Cada usuári
 3. **Email:** ativar SMTP e POP3, criar contas e preparar mensagens.
 4. **FTP:** ativar o serviço e definir as permissões dos usuários.
 5. **Verificação:** executar comandos FTP e observar as operações permitidas e negadas.
+
+---
 
 ### Fluxo das atividades
 
@@ -137,6 +151,8 @@ put aMessage_new.txt
 delete aMessage_new.txt
 rename aMessage_new.txt aMessage_rename.txt
 ```
+
+---
 
 | Comando | Função |
 |---|---|
@@ -191,6 +207,8 @@ Esse exemplo utiliza os conceitos de autenticação e autorização estudados no
 | FTP | Como transferir arquivos e aplicar permissões por usuário. |
 | Análise de acesso | Como identificar operações permitidas e bloqueadas. |
 
+---
+
 ### Relação com Suporte de TI e IAM
 
 O laboratório reforçou a diferença entre problemas de autenticação e de permissão, um conhecimento importante para atividades de **Suporte de TI e Gestão de Identidades e Acessos (IAM)**.
@@ -216,5 +234,3 @@ Compreender essa diferença ajuda a investigar solicitações de acesso, identif
 | Autenticação | Processo que verifica quem está tentando acessar um sistema. |
 | Autorização | Processo que define quais ações um usuário pode realizar. |
 | Permissão | Regra que permite ou impede uma ação específica. |
-
-> **Observação:** o FTP tradicional não criptografa as credenciais e os arquivos durante a transferência. Em ambientes reais, alternativas seguras, como SFTP ou FTPS, são mais adequadas.
