@@ -1,160 +1,133 @@
+
 # Controle de Acesso com AAA, Email e FTP
 
 ## Visão geral
 
-Neste laboratório da **Cisco Networking Academy (NetAcad)**, utilizei o **Cisco Packet Tracer** para entender como controlar o acesso de usuários a uma rede e a diferentes serviços.
+Neste laboratório da **Cisco Networking Academy (NetAcad)**, utilizei o **Cisco Packet Tracer** para estudar como controlar o acesso de usuários a uma rede wireless, contas de email e arquivos compartilhados.
 
-A atividade abordou autenticação wireless com AAA/RADIUS, configuração de contas de email e permissões de arquivos em um servidor FTP. O principal aprendizado foi entender que **ter acesso a um sistema não significa ter permissão para realizar todas as ações**.
+A atividade envolveu autenticação com AAA/RADIUS, configuração de serviços de email e definição de permissões em um servidor FTP.
+
+O principal aprendizado foi entender que **conseguir acessar um sistema não significa ter permissão para realizar todas as ações**.
 
 <img width="1536" height="1024" alt="Infográfico de Controle de Acesso em Redes" src="https://github.com/user-attachments/assets/3c99a1e1-2269-4806-b2c9-1d36494e2079" />
-
----
-
-Esta documentação apresenta as configurações registradas, as atividades previstas e os conhecimentos adquiridos durante o exercício.
-
-![Ambiente do laboratório](https://github.com/user-attachments/assets/d2dd23b5-d869-47a5-94de-ced49dcb465c)
 
 ---
 
 ## Objetivos
 
 - Entender a diferença entre autenticação e autorização.
-- Configurar usuários para acesso wireless com AAA/RADIUS.
-- Conhecer os serviços SMTP e POP3 usados no email.
-- Definir permissões de acesso a arquivos no FTP.
-- Observar operações permitidas e negadas conforme o usuário.
+- Configurar usuários para acessar uma rede wireless com AAA/RADIUS.
+- Conhecer os serviços de envio e recebimento de email.
+- Definir permissões diferentes para usuários de FTP.
+- Identificar operações permitidas e bloqueadas conforme as permissões.
+
+![Ambiente do laboratório](https://github.com/user-attachments/assets/d2dd23b5-d869-47a5-94de-ced49dcb465c)
 
 ---
 
-## Etapas da atividade
+## Configurações do laboratório
 
-1. Ativar o serviço AAA/RADIUS e cadastrar os usuários.
-2. Configurar o acesso wireless nos laptops usando WPA2/802.1X e DHCP.
-3. Ativar SMTP e POP3 e criar as contas de email.
-4. Configurar os clientes de email e preparar mensagens.
-5. Ativar o FTP e definir as permissões de cada usuário.
-6. Utilizar comandos FTP para observar as operações disponíveis e as restrições de acesso.
+### 1. Servidor AAA/RADIUS
+
+Responsável por verificar as credenciais dos usuários que tentam acessar a rede wireless.
+
+| Parâmetro | Configuração |
+|---|---|
+| Serviço AAA | Ativado |
+| Protocolo | RADIUS |
+| Porta | `1812` |
+| Cliente cadastrado | `WLC-1` |
+| IP do cliente | `192.168.99.250` |
+| Usuários cadastrados | `user1` e `user2` |
+
+### 2. Rede wireless e laptops
+
+Os laptops utilizam a rede `HQ-INT`, com autenticação de usuários pelo servidor AAA/RADIUS.
+
+| Parâmetro | Configuração |
+|---|---|
+| SSID | `HQ-INT` |
+| Autenticação | WPA2/802.1X |
+| Criptografia registrada | AES |
+| Endereçamento | DHCP |
+| Rede prevista | `192.168.50.0/24` |
+
+**Usuários dos dispositivos:**
+
+| Dispositivo | Usuário | Situação |
+|---|---|---|
+| HQ-Laptop-1 | `user1` | Configuração registrada |
+| HQ-Laptop-2 | `user2` | Configuração prevista na atividade |
+
+A autenticação permite verificar as credenciais antes de autorizar o acesso à rede. O material registra as configurações, mas não confirma a conectividade final dos laptops.
+
+### 3. Servidor de email
+
+O servidor utiliza SMTP para envio de mensagens e POP3 para recuperação de emails.
+
+| Parâmetro | Configuração |
+|---|---|
+| SMTP | Ativado |
+| POP3 | Ativado |
+| Domínio | `mail.cyberhq.com` |
+
+**Contas de email:**
+
+| Usuário | Endereço de email |
+|---|---|
+| HQuser1 | `HQuser1@mail.cyberhq.com` |
+| HQuser2 | `HQuser2@mail.cyberhq.com` |
+| BRuser1 | `BRuser1@mail.cyberhq.com` |
+| BRuser2 | `BRuser2@mail.cyberhq.com` |
+
+A configuração dos clientes de email envolveu dispositivos como `PC 1-1`, `PC 2-3`, `HQ-Laptop-1` e `Net-Admin`. A conta HQuser1 foi indicada para o PC 1-1.
+
+### 4. Servidor FTP e permissões
+
+O FTP permite transferir arquivos entre computadores e um servidor. Cada usuário recebe permissões que definem quais operações pode realizar.
+
+| Parâmetro | Configuração |
+|---|---|
+| Serviço | FTP ativado |
+| Endereço IP | `192.168.75.2` |
+| Usuários | `sukyi`, `ajulo` e `malia` |
+
+**Permissões configuradas:**
+
+| Usuário | Ler | Escrever | Excluir | Renomear | Listar |
+|---|---|---|---|---|---|
+| `sukyi` | Sim | Sim | Sim | Sim | Sim |
+| `ajulo` | Sim | Sim | Sim | Sim | Sim |
+| `malia` | Sim | Sim | Não | Sim | Sim |
+
+**Exemplo:** a conta `malia` pode acessar, enviar e renomear arquivos, mas não possui autorização para excluí-los.
 
 ---
 
-## Fluxograma do processo
+## Etapas do laboratório
+
+1. **Autenticação:** ativar o AAA/RADIUS e cadastrar os usuários.
+2. **Rede wireless:** configurar os laptops com WPA2/802.1X e DHCP.
+3. **Email:** ativar SMTP e POP3, criar contas e preparar mensagens.
+4. **FTP:** ativar o serviço e definir as permissões dos usuários.
+5. **Verificação:** executar comandos FTP e observar as operações permitidas e negadas.
+
+### Fluxo das atividades
 
 ```mermaid
 flowchart TD
-    A[Início do laboratório] --> B[Configurar AAA e usuários]
-    B --> C[Configurar acesso wireless]
-    C --> D[Configurar serviços e contas de email]
-    D --> E[Definir usuários e permissões FTP]
-    E --> F[Executar comandos FTP]
-    F --> G[Analisar permissões e resultados]
+    A[Configurar AAA/RADIUS] --> B[Configurar acesso wireless]
+    B --> C[Criar contas de email]
+    C --> D[Configurar usuários e permissões FTP]
+    D --> E[Executar comandos FTP]
+    E --> F[Analisar os resultados]
 ```
 
 ---
 
-## Onde esse conhecimento pode ser aplicado?
-
-### Cenário fictício: acesso a arquivos de uma empresa
-
-**Situação:** uma empresa possui uma pasta de arquivos compartilhados. Os funcionários precisam consultar e atualizar documentos, mas somente alguns devem excluir.
-
-**Aplicação:** a equipe de TI configura contas e permissões diferentes. Assim, um funcionário pode acessar os arquivos e realizar determinadas alterações, sem ter autorização para apagar documentos.
-
-**Relação com o laboratório:** o exemplo representa o controle de permissões estudado no FTP e ajuda a entender por que uma conta pode funcionar normalmente mesmo quando uma ação específica é bloqueada.
-
----
-
-## Configurações dos dispositivos
-
-### Servidor AAA/RADIUS
-
-| Parâmetro | Configuração registrada |
-|---|---|
-| Serviço AAA | Ativado |
-| Protocolo | RADIUS |
-| Porta | 1812 |
-| Cliente cadastrado | WLC-1 |
-| IP do cliente | 192.168.99.250 |
-| Usuários | `user1` e `user2` |
-
-O servidor centraliza a verificação das credenciais utilizadas para acessar a rede wireless.
-
----
-
-### HQ-Laptop-1
-
-| Parâmetro | Configuração registrada |
-|---|---|
-| Interface | Wireless0 |
-| SSID | HQ-INT |
-| Autenticação | WPA2 (802.1X) |
-| Usuário | `user1` |
-| Criptografia | AES |
-| Endereçamento | DHCP selecionado |
-| Rede prevista na atividade | 192.168.50.0/24 |
-
----
-
-### HQ-Laptop-2
-
-| Parâmetro | Configuração prevista na atividade |
-|---|---|
-| SSID | HQ-INT |
-| Autenticação | WPA2 com credenciais AAA |
-| Usuário | `user2` |
-| Endereçamento | DHCP |
-| Rede esperada | 192.168.50.0/24 |
-
----
-
-### Servidor de email
-
-| Parâmetro | Configuração registrada |
-|---|---|
-| SMTP | Ativado |
-| POP3 | Ativado |
-| Domínio | mail.cyberhq.com |
-| Contas | `HQuser1`, `HQuser2`, `BRuser1` e `BRuser2` |
-
-O SMTP é utilizado para enviar mensagens, enquanto o POP3 permite que um cliente de email recupere mensagens da caixa postal.
-
----
-
-### Contas de email
-
-| Usuário | Endereço | Dispositivo indicado |
-|---|---|---|
-| HQuser1 | HQuser1@mail.cyberhq.com | PC 1-1 |
-| HQuser2 | HQuser2@mail.cyberhq.com | Conforme atividade |
-| BRuser1 | BRuser1@mail.cyberhq.com | Conforme atividade |
-| BRuser2 | BRuser2@mail.cyberhq.com | Conforme atividade |
-
-A atividade também menciona os dispositivos PC 2-3, HQ-Laptop-1 e Net-Admin na configuração dos clientes de email.
-
----
-
-### Servidor FTP
-
-| Parâmetro | Configuração registrada |
-|---|---|
-| Serviço | FTP ativado |
-| Endereço IP | 192.168.75.2 |
-| Usuários | `sukyi`, `ajulo` e `malia` |
-
----
-
-**Permissões dos usuários:**
-
-| Usuário | Ler | Escrever | Excluir | Renomear | Listar |
-|---|---|---|---|---|---|
-| sukyi | Sim | Sim | Sim | Sim | Sim |
-| ajulo | Sim | Sim | Sim | Sim | Sim |
-| malia | Sim | Sim | Não | Sim | Sim |
-
-A conta `malia` pode acessar e trabalhar com arquivos, mas não tem autorização para excluir.
-
----
-
 ## Comandos FTP utilizados
+
+Os comandos abaixo foram utilizados para acessar o servidor e trabalhar com arquivos.
 
 ```text
 ftp 192.168.75.2
@@ -165,43 +138,66 @@ delete aMessage_new.txt
 rename aMessage_new.txt aMessage_rename.txt
 ```
 
----
-
-| Comando | Para que serve? |
+| Comando | Função |
 |---|---|
-| `ftp` | Inicia uma conexão com o servidor FTP. |
+| `ftp` | Conecta ao servidor FTP. |
 | `dir` | Lista os arquivos disponíveis. |
 | `get` | Baixa um arquivo do servidor. |
 | `put` | Envia um arquivo ao servidor. |
 | `delete` | Tenta excluir um arquivo. |
-| `rename` | Tenta renomear um arquivo. |
+| `rename` | Tenta alterar o nome de um arquivo. |
 
 ---
 
-## Resultados registrados
+## Resultados observados
 
-| Verificação | Observação |
+| Verificação | Resultado registrado |
 |---|---|
 | Conexão FTP | Conexão e autenticação apresentadas no terminal. |
 | Exclusão com `malia` | Operação negada por falta de permissão. |
 | Renomeação com `malia` | Operação concluída com sucesso. |
-| Email | Tela de composição de mensagem registrada; não confirma o recebimento. |
-| Wireless | Configuração de autenticação e DHCP registrada; não confirma a conectividade final. |
+| Email | Mensagem preparada no cliente, sem confirmação de recebimento. |
+| Rede wireless | Configurações registradas, sem confirmação da conexão final. |
 
-Também foi registrado um **timeout** em uma tentativa inicial de conexão FTP. O material disponível não confirma a causa desse comportamento.
+Também ocorreu um **timeout** em uma tentativa inicial de conexão FTP. O material disponível não permite identificar sua causa.
+
+O resultado mais importante foi observar que a conta `malia` conseguiu renomear um arquivo, mas teve a exclusão bloqueada. Isso demonstra como as permissões controlam ações específicas após a autenticação.
+
+---
+
+## Onde esse conhecimento pode ser aplicado?
+
+### Cenário fictício: compartilhamento de arquivos em uma empresa
+
+**Situação:** funcionários de uma empresa precisam consultar e atualizar documentos compartilhados, mas nem todos devem ter permissão para excluí-los.
+
+**Solução:** a equipe de TI cria contas com diferentes níveis de acesso. Alguns funcionários podem consultar e modificar documentos, enquanto a exclusão fica restrita a usuários autorizados.
+
+**Benefício:** a empresa reduz o risco de exclusões indevidas e mantém maior controle sobre seus arquivos.
+
+Esse exemplo utiliza os conceitos de autenticação e autorização estudados no laboratório, sem representar uma atividade adicional realizada.
 
 ---
 
 ## Conhecimentos adquiridos
 
-O laboratório me ajudou a entender duas etapas importantes do controle de acesso:
+| Conhecimento | O que aprendi |
+|---|---|
+| Autenticação | Como verificar a identidade de quem tenta acessar um serviço. |
+| Autorização | Como definir o que cada usuário pode fazer após acessar. |
+| AAA/RADIUS | Como centralizar a autenticação de usuários de uma rede wireless. |
+| WPA2/802.1X | Como utilizar credenciais para controlar o acesso wireless. |
+| SMTP e POP3 | Como funcionam os serviços de envio e recuperação de emails. |
+| FTP | Como transferir arquivos e aplicar permissões por usuário. |
+| Análise de acesso | Como identificar operações permitidas e bloqueadas. |
 
-- **Autenticação:** verifica quem está tentando entrar, por exemplo, com usuário e senha.
-- **Autorização:** determina o que essa pessoa pode fazer após acessar o serviço.
+### Relação com Suporte de TI e IAM
 
-O exemplo do FTP tornou essa diferença mais clara: a conta `malia` conseguiu realizar uma operação de renomeação, mas não tinha permissão para excluir arquivos.
+O laboratório reforçou a diferença entre problemas de autenticação e de permissão, um conhecimento importante para atividades de **Suporte de TI e Gestão de Identidades e Acessos (IAM)**.
 
-Esse aprendizado é útil em **Suporte de TI e IAM**, especialmente ao investigar situações em que um usuário consegue entrar em um sistema, mas não pode executar determinada tarefa.
+Na prática, um usuário pode conseguir entrar em um sistema, mas não ter autorização para acessar determinado recurso ou executar uma ação.
+
+Compreender essa diferença ajuda a investigar solicitações de acesso, identificar restrições e orientar o encaminhamento de problemas para as equipes responsáveis.
 
 ---
 
@@ -209,13 +205,16 @@ Esse aprendizado é útil em **Suporte de TI e IAM**, especialmente ao investiga
 
 | Termo | Explicação simples |
 |---|---|
-| AAA | Conjunto de funções para verificar usuários, controlar permissões e registrar informações de acesso. |
-| RADIUS | Protocolo usado para verificar credenciais de acesso à rede em um servidor central. |
-| WPA2/802.1X | Tecnologias usadas para proteger a rede wireless e autenticar quem tenta se conectar. |
-| DHCP | Serviço que fornece automaticamente configurações de rede, como endereço IP. |
-| SMTP | Protocolo usado para enviar emails. |
-| POP3 | Protocolo usado para recuperar emails de uma caixa postal. |
-| FTP | Protocolo para transferir arquivos entre dispositivos e um servidor. |
-| Permissão | Regra que define quais ações um usuário pode realizar. |
+| AAA | Conjunto de funções para autenticar usuários, controlar permissões e registrar atividades de acesso. |
+| RADIUS | Protocolo utilizado para centralizar a verificação de credenciais de acesso à rede. |
+| WPA2/802.1X | Tecnologias utilizadas para proteger a rede wireless e autenticar usuários. |
+| AES | Tecnologia utilizada para criptografar informações. |
+| DHCP | Serviço que fornece automaticamente endereços IP e outras configurações de rede. |
+| SMTP | Protocolo utilizado para enviar emails. |
+| POP3 | Protocolo utilizado para recuperar emails de uma caixa postal. |
+| FTP | Protocolo utilizado para transferir arquivos entre dispositivos. |
+| Autenticação | Processo que verifica quem está tentando acessar um sistema. |
+| Autorização | Processo que define quais ações um usuário pode realizar. |
+| Permissão | Regra que permite ou impede uma ação específica. |
 
-
+> **Observação:** o FTP tradicional não criptografa as credenciais e os arquivos durante a transferência. Em ambientes reais, alternativas seguras, como SFTP ou FTPS, são mais adequadas.
