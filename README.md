@@ -9,7 +9,7 @@ A atividade envolveu autenticação com AAA/RADIUS, configuração de serviços 
 
 O principal aprendizado foi entender que **conseguir acessar um sistema não significa ter permissão para realizar todas as ações**.
 
-<img width="1536" height="1024" alt="Infográfico de Controle de Acesso em Redes" src="https://github.com/user-attachments/assets/3c99a1e1-2269-4806-b2c9-1d36494e2079" />
+<img width="619" height="410" alt="image" src="https://github.com/user-attachments/assets/b9793baa-0083-4830-8b50-32e2489b35c5" />
 
 ---
 
